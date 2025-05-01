@@ -14,7 +14,7 @@ class gaussianBlur_node(Node):
         # Subscribe to image topic
         self.subscription = self.create_subscription(
             Image,
-            "imageRaw",
+            "image_raw",
             self.imageCallback,
             10)
         self.subscription   #Preventing unused variable warnings
@@ -22,7 +22,7 @@ class gaussianBlur_node(Node):
         # Publisher for filtered image
         self.publisher = self.create_publisher(
             Image,
-            "outputImage",
+            "image_output",
         10)
 
         # Initializing CV Bridge
@@ -32,13 +32,13 @@ class gaussianBlur_node(Node):
         "Callback for inoout image topic"
         "Applies gaussian blur to thre reciving image and publishing the edges as an image"
         try:
-            blurMSG =self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            cv_image =self.bridge.imgmsg_to_cv2(msg, "bgr8")
         except Exception as e:
             self.get_logger().error("Failed to convert image: %s" % str(e))
             return
         
         # Applying Gaussian blur consisting of a 5x5 kernel
-        cvBlurred = cv2.gaussianBlur(cvImage, (5, 5), 0)
+        cvBlurred = cv2.gaussianBlur(cv_image, (5, 5), 0)
 
         # Convert back to ROS image message
         try:

@@ -4,12 +4,11 @@
   <name>camera_pipeline</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="arondl@stud.ntnu.no">aron-larsen</maintainer>
+  <maintainer email="jonakselm@gmail.com">user</maintainer>
   <license>TODO: License declaration</license>
 
-  <depend>rclpy</depend>
-  <depend>image_proc</depend>
-  <depend>launch</depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>image_proc</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
