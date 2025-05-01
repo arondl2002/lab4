@@ -1,0 +1,22 @@
+[1.305s] Invoking command in '/home/aron-larsen/lab4/src/camera_pipeline': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/camera_pipeline build --build-base /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build install --record /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/install.log --single-version-externally-managed install_data
+[1.587s] running egg_info
+[1.607s] writing build/camera_pipeline/camera_pipeline.egg-info/PKG-INFO
+[1.607s] writing dependency_links to build/camera_pipeline/camera_pipeline.egg-info/dependency_links.txt
+[1.607s] writing requirements to build/camera_pipeline/camera_pipeline.egg-info/requires.txt
+[1.608s] writing top-level names to build/camera_pipeline/camera_pipeline.egg-info/top_level.txt
+[1.649s] reading manifest file 'build/camera_pipeline/camera_pipeline.egg-info/SOURCES.txt'
+[1.650s] writing manifest file 'build/camera_pipeline/camera_pipeline.egg-info/SOURCES.txt'
+[1.650s] running build
+[1.650s] running build_py
+[1.650s] creating /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build
+[1.650s] creating /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build/lib
+[1.650s] creating /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build/lib/camera_pipeline
+[1.650s] copying camera_pipeline/__init__.py -> /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build/lib/camera_pipeline
+[1.651s] running install
+[1.656s] running install_lib
+[1.676s] creating /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/lib/python3.12/site-packages/camera_pipeline
+[1.676s] copying /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build/lib/camera_pipeline/__init__.py -> /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/lib/python3.12/site-packages/camera_pipeline
+[1.676s] byte-compiling /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/lib/python3.12/site-packages/camera_pipeline/__init__.py to __init__.cpython-312.pyc
+[1.677s] running install_data
+[1.677s] error: can't copy 'launch/pipeline_launch.py': doesn't exist or not a regular file
+[1.728s] Invoked command in '/home/aron-larsen/lab4/src/camera_pipeline' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/camera_pipeline build --build-base /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build install --record /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/install.log --single-version-externally-managed install_data

@@ -1,0 +1,20 @@
+running egg_info
+writing build/camera_pipeline/camera_pipeline.egg-info/PKG-INFO
+writing dependency_links to build/camera_pipeline/camera_pipeline.egg-info/dependency_links.txt
+writing requirements to build/camera_pipeline/camera_pipeline.egg-info/requires.txt
+writing top-level names to build/camera_pipeline/camera_pipeline.egg-info/top_level.txt
+reading manifest file 'build/camera_pipeline/camera_pipeline.egg-info/SOURCES.txt'
+writing manifest file 'build/camera_pipeline/camera_pipeline.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build
+creating /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build/lib
+creating /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build/lib/camera_pipeline
+copying camera_pipeline/__init__.py -> /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build/lib/camera_pipeline
+running install
+running install_lib
+creating /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/lib/python3.12/site-packages/camera_pipeline
+copying /home/aron-larsen/lab4/src/camera_pipeline/build/camera_pipeline/build/lib/camera_pipeline/__init__.py -> /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/lib/python3.12/site-packages/camera_pipeline
+byte-compiling /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/lib/python3.12/site-packages/camera_pipeline/__init__.py to __init__.cpython-312.pyc
+running install_data
+error: can't copy 'launch/pipeline_launch.py': doesn't exist or not a regular file

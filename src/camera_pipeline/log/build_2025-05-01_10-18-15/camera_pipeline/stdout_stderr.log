@@ -1,0 +1,19 @@
+running egg_info
+creating build/camera_pipeline/camera_pipeline.egg-info
+writing build/camera_pipeline/camera_pipeline.egg-info/PKG-INFO
+writing dependency_links to build/camera_pipeline/camera_pipeline.egg-info/dependency_links.txt
+writing requirements to build/camera_pipeline/camera_pipeline.egg-info/requires.txt
+writing top-level names to build/camera_pipeline/camera_pipeline.egg-info/top_level.txt
+writing manifest file 'build/camera_pipeline/camera_pipeline.egg-info/SOURCES.txt'
+reading manifest file 'build/camera_pipeline/camera_pipeline.egg-info/SOURCES.txt'
+writing manifest file 'build/camera_pipeline/camera_pipeline.egg-info/SOURCES.txt'
+running build
+running install
+running install_data
+creating /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/share/ament_index
+creating /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/share/ament_index/resource_index
+creating /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/share/ament_index/resource_index/packages
+copying resource/camera_pipeline -> /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/share/ament_index/resource_index/packages
+error: can't copy 'launch/pipeline_launch.py': doesn't exist or not a regular file
+copying package.xml -> /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/share/camera_pipeline
+creating /home/aron-larsen/lab4/src/camera_pipeline/install/camera_pipeline/share/camera_pipeline/launch
