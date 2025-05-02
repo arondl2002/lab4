@@ -47,11 +47,12 @@ class CannyEdgeNode(Node):
         # Legg koden din her
         # cv_image er bildet du skal bruke som input
         # cv_edge (en variabel du lager selv) skal være sluttresultatet etter å bruke Canny Edge.
-        cv_edge = cv2.Canny(cv_image, 100, 200) 
+        src_gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+        cv_edge = cv2.Canny(src_gray, 100, 200) 
         
         # Convert back to ROS Image message
         try:
-            edge_msg = self.bridge.cv2_to_imgmsg(cv_edge, "bgr8")
+            edge_msg = self.bridge.cv2_to_imgmsg(cv_edge, "mono8")
         except Exception as e:
             self.get_logger().error('Failed to convert image: %s' % str(e))
             return

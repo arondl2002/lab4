@@ -5,58 +5,67 @@ from rcl_interfaces.msg import SetParametersResult
 from cv_bridge import CvBridge
 import cv2
 
-class gaussianBlur_node(Node):
-    "Node for blurring an image"
+class GaussianBlurNode(Node):
+    """
+    A node for blurring an image
+    """
     def __init__(self):
-        "Constructing necessary attributes for the gaussian blur node"
-        super().__init__("Gaussian_blur")
+        """
+        Constructs all the necessary attributes for the Gaussian blur node.
+        """
+        super().__init__('gaussian_blur')
 
-        # Subscribe to image topic
+        # Subscribe to a image topic
         self.subscription = self.create_subscription(
             Image,
             "image_raw",
-            self.imageCallback,
+            self.image_callback,
             10)
-        self.subscription   #Preventing unused variable warnings
+        self.subscription  # prevent unused variable warning
 
-        # Publisher for filtered image
+        # Publish the filtered image
         self.publisher = self.create_publisher(
             Image,
-            "image_output",
-        10)
-
-        # Initializing CV Bridge
+            'image_output',
+            10)
+  
+        # Initialize CVBridge
         self.bridge = CvBridge()
+    
 
-    def imageCallback(self, msg):
-        "Callback for inoout image topic"
-        "Applies gaussian blur to thre reciving image and publishing the edges as an image"
+    def image_callback(self, msg):
+        """
+        Callback function for input image topic.
+        Applies Gaussian blur to the received image and publishes the edges as an image.
+        """
         try:
-            cv_image =self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         except Exception as e:
-            self.get_logger().error("Failed to convert image: %s" % str(e))
+            self.get_logger().error('Failed to convert image: %s' % str(e))
             return
+        # 
+        # Legg koden din her
+        # cv_image er bildet du skal bruke som input
+        # cv_blurred (en variabel du lager selv) skal være sluttresultatet etter å bruke gaussisk uskarphet.
+        cv_blurred = cv2.GaussianBlur(cv_image, (5, 5), 0)
         
-        # Applying Gaussian blur consisting of a 5x5 kernel
-        cvBlurred = cv2.gaussianBlur(cv_image, (5, 5), 0)
-
-        # Convert back to ROS image message
+        # Convert back to ROS Image message
         try:
-            blurMSG = self.bridge.cv2_to_imgmsg(cvBlurred, "bgr8")
+            blur_msg = self.bridge.cv2_to_imgmsg(cv_blurred, "bgr8")
         except Exception as e:
-            self.get_logger().error("Failed to convert image: %s" % str(e))
+            self.get_logger().error('Failed to convert image: %s' % str(e))
             return
-        
-        #P ublish the filtered image
-        self.publisher.publish(blurMSG)
+  
+        # Publish the filtered image
+        self.publisher.publish(blur_msg)
 
-# Initializing the node
-def main(args = None):
-    rclpy.init(args = args)
-    imageBlur_node = gaussianBlur_node()
-    rclpy.spin(imageBlur_node)
-    imageBlur_node.destroy_node()
+# Initialize the node
+def main(args=None):
+    rclpy.init(args=args)
+    image_blur_node = GaussianBlurNode()
+    rclpy.spin(image_blur_node)
+    image_blur_node.destroy_node()
     rclpy.shutdown()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
