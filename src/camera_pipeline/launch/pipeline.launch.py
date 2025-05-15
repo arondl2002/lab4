@@ -1,11 +1,15 @@
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
+import os
 
 def generate_launch_description():
+    calibration_data = os.path.join(get_package_share_directory("camera_pipeline"), "config", "ost.yaml")
     usb_cam = Node(
         package = "usb_cam",
         executable = "usb_cam_node_exe",
         name = "camera",
+        parameters = [{"camera_info_url": f"file://{calibration_data}"}],
         #remappings=[
         #    ("image_raw", "image"),
         #],

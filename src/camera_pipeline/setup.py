@@ -11,7 +11,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name, ['launch/pipeline.launch.py']),
-        ('share/' + package_name, ['config/ost.yaml']),
+        (f"share/{package_name}/config", ['config/ost.yaml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
